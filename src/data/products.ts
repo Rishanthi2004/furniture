@@ -9,11 +9,11 @@ export const PRODUCTS: Product[] = [
     categoryLabel: 'Armchairs & Seating',
     price: 32500,
     originalPrice: 38000,
-    image: '/src/assets/images/cozy_armchair_1793872988150.jpg',
+    image: '/assets/images/cozy_armchair_1793872988150.jpg',
     gallery: [
-      '/src/assets/images/cozy_armchair_1793872988150.jpg',
-      '/src/assets/images/hero_living_room_1793872982731.jpg',
-      '/src/assets/images/rattan_lounge_1793872986287.jpg'
+      '/assets/images/cozy_armchair_1793872988150.jpg',
+      '/assets/images/hero_living_room_1793872982731.jpg',
+      '/assets/images/rattan_lounge_1793872986287.jpg'
     ],
     description:
       'Engineered for quiet contemplative moments, the Cozy Armchair features an arched ergonomic backrest, dense feather-wrapped core cushioning, and tapered kiln-dried white oak legs. Handcrafted with bespoke textured Belgian bouclé fabric.',
@@ -51,10 +51,10 @@ export const PRODUCTS: Product[] = [
     categoryLabel: 'Living & Sofas',
     price: 78900,
     originalPrice: 89000,
-    image: '/src/assets/images/modern_sofa_1793872983382.jpg',
+    image: '/assets/images/modern_sofa_1793872983382.jpg',
     gallery: [
-      '/src/assets/images/modern_sofa_1793872983382.jpg',
-      '/src/assets/images/hero_living_room_1793872982731.jpg'
+      '/assets/images/modern_sofa_1793872983382.jpg',
+      '/assets/images/hero_living_room_1793872982731.jpg'
     ],
     description:
       'A masterclass in proportions. The Modern Sofa balances a low architectural silhouette with generous seat depth and solid natural oak cylindrical feet. Built to anchor modern light-filled living spaces.',
@@ -92,10 +92,10 @@ export const PRODUCTS: Product[] = [
     categoryLabel: 'Tables & Dining',
     price: 46200,
     originalPrice: 52000,
-    image: '/src/assets/images/wooden_table_1793872984458.jpg',
+    image: '/assets/images/wooden_table_1793872984458.jpg',
     gallery: [
-      '/src/assets/images/wooden_table_1793872984458.jpg',
-      '/src/assets/images/hero_living_room_1793872982731.jpg'
+      '/assets/images/wooden_table_1793872984458.jpg',
+      '/assets/images/hero_living_room_1793872982731.jpg'
     ],
     description:
       'Honoring honest carpentry, this dining and workspace table highlights continuous natural timber grain, gently rounded bullnose edges, and tapered legs that optimize seating comfort.',
@@ -131,10 +131,10 @@ export const PRODUCTS: Product[] = [
     categoryLabel: 'Lamps & Ambient Lighting',
     price: 14800,
     originalPrice: 17500,
-    image: '/src/assets/images/stylish_lamp_1793872984469.jpg',
+    image: '/assets/images/stylish_lamp_1793872984469.jpg',
     gallery: [
-      '/src/assets/images/stylish_lamp_1793872984469.jpg',
-      '/src/assets/images/hero_living_room_1793872982731.jpg'
+      '/assets/images/stylish_lamp_1793872984469.jpg',
+      '/assets/images/hero_living_room_1793872982731.jpg'
     ],
     description:
       'An iconic accent lighting silhouette. The Stylish Lamp marries a spun aluminium parabolic shade in warm mustard satin with a solid cylindrical travertine stone pedestal base and brushed brass hardware.',
@@ -171,10 +171,10 @@ export const PRODUCTS: Product[] = [
     categoryLabel: 'New Arrivals',
     price: 29500,
     originalPrice: 34000,
-    image: '/src/assets/images/rattan_lounge_1793872986287.jpg',
+    image: '/assets/images/rattan_lounge_1793872986287.jpg',
     gallery: [
-      '/src/assets/images/rattan_lounge_1793872986287.jpg',
-      '/src/assets/images/hero_living_room_1793872982731.jpg'
+      '/assets/images/rattan_lounge_1793872986287.jpg',
+      '/assets/images/hero_living_room_1793872982731.jpg'
     ],
     description:
       'Celebrating artisanal weaving traditions. Sustainably sourced natural cane is steam-bent into an embracing curved barrel silhouette, anchored by solid teak legs and a thick washable off-white linen seat cushion.',
@@ -211,10 +211,10 @@ export const PRODUCTS: Product[] = [
     categoryLabel: 'Minimalist Storage',
     price: 39000,
     originalPrice: 45000,
-    image: '/src/assets/images/minimalist_shelf_1793872986427.jpg',
+    image: '/assets/images/minimalist_shelf_1793872986427.jpg',
     gallery: [
-      '/src/assets/images/minimalist_shelf_1793872986427.jpg',
-      '/src/assets/images/hero_living_room_1793872982731.jpg'
+      '/assets/images/minimalist_shelf_1793872986427.jpg',
+      '/assets/images/hero_living_room_1793872982731.jpg'
     ],
     description:
       'Clean architectural planes intersect to create dynamic display pockets for art monographs, ceramics, and personal keepsakes. Designed to maintain an airy aesthetic without visual heaviness.',
@@ -250,10 +250,10 @@ export const PRODUCTS: Product[] = [
     categoryLabel: 'Special Offers',
     price: 18400,
     originalPrice: 23500,
-    image: '/src/assets/images/orange_ottoman_1793872986083.jpg',
+    image: '/assets/images/orange_ottoman_1793872986083.jpg',
     gallery: [
-      '/src/assets/images/orange_ottoman_1793872986083.jpg',
-      '/src/assets/images/hero_living_room_1793872982731.jpg'
+      '/assets/images/orange_ottoman_1793872986083.jpg',
+      '/assets/images/hero_living_room_1793872982731.jpg'
     ],
     description:
       'Versatile comfort piece functioning as a footrest, extra seating, or informal low table when paired with a wooden tray. Built with high-density layered core that never loses its refined circular geometry.',
@@ -280,6 +280,53 @@ export const PRODUCTS: Product[] = [
     isSpecialOffer: true,
     stockStatus: 'In Stock',
     leadTime: 'Delivered in 2–4 business days'
+  },
+  {
+    id: 'hero-burnt-chair',
+    name: 'Burnt Orange Accent Chair',
+    tagline: 'Signature sculpted tub silhouette in artisanal burnt orange wool',
+    category: 'seating',
+    categoryLabel: 'Armchairs & Seating',
+    price: 34500,
+    originalPrice: 42000,
+    image: '/assets/images/burnt_orange_chair_1793874893473.jpg',
+    gallery: [
+      '/assets/images/burnt_orange_chair_1793874893473.jpg',
+      '/assets/images/hero_living_room_1793872982731.jpg',
+      '/assets/images/cozy_armchair_1793872988150.jpg'
+    ],
+    description:
+      'The defining focal piece of modern interior design. Featuring an embracing curved barrel backrest, high-density ergonomic pocket cushioning, and tapered natural white oak legs. Hand-upholstered in an earthy, tactile terracotta-orange wool bouclé blend.',
+    details: [
+      'Ergonomic wraparound tub backrest provides relaxed lumbar support',
+      'Solid kiln-dried white oak legs with protective floor glides',
+      'Dual-density high resilience foam with down feather envelope',
+      'Stain-resistant performance textured bouclé wool upholstery',
+      'Reinforced corner-blocked hardwood interior frame'
+    ],
+    materials: [
+      'Terracotta Orange Wool Bouclé Blend',
+      'FSC-Certified Solid European White Oak',
+      'High-Resilience Cold-Cure Foam & Sinuous Steel Suspension'
+    ],
+    colors: [
+      { name: 'Burnt Terracotta', hex: '#C86428' },
+      { name: 'Warm Ivory', hex: '#F3EFE9' },
+      { name: 'Earthy Sand', hex: '#DFD7CB' },
+      { name: 'Charcoal Slag', hex: '#3B3632' }
+    ],
+    dimensions: {
+      width: '82 cm',
+      depth: '84 cm',
+      height: '80 cm',
+      seatHeight: '43 cm',
+      weight: '22 kg'
+    },
+    rating: 4.98,
+    reviewsCount: 56,
+    isPopular: false,
+    stockStatus: 'In Stock',
+    leadTime: 'Delivered in 3–5 business days'
   }
 ];
 

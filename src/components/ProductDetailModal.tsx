@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   X,
@@ -25,6 +25,7 @@ interface ProductDetailModalProps {
   onToggleWishlist: (product: Product) => void;
   onAddToCart: (product: Product, color: ProductColor, quantity: number) => void;
   onBuyNow: (product: Product, color: ProductColor, quantity: number) => void;
+  initialTab?: 'overview' | 'dimensions' | 'materials' | 'room';
 }
 
 export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
@@ -34,16 +35,27 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   isWishlisted,
   onToggleWishlist,
   onAddToCart,
-  onBuyNow
+  onBuyNow,
+  initialTab = 'overview'
 }) => {
   if (!product || !isOpen) return null;
 
   const [selectedImage, setSelectedImage] = useState(product.image);
   const [selectedColor, setSelectedColor] = useState<ProductColor>(product.colors[0]);
   const [quantity, setQuantity] = useState(1);
-  const [activeTab, setActiveTab] = useState<'overview' | 'dimensions' | 'materials' | 'room'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'dimensions' | 'materials' | 'room'>(initialTab);
   const [addedAnimation, setAddedAnimation] = useState(false);
   const [roomWallTone, setRoomWallTone] = useState<'warm-cream' | 'terracotta-soft' | 'soft-sage'>('warm-cream');
+
+  // Keep state synchronized when opening different products or tabs
+  useEffect(() => {
+    if (product) {
+      setSelectedImage(product.image);
+      setSelectedColor(product.colors[0]);
+      setQuantity(1);
+      setActiveTab(initialTab || 'overview');
+    }
+  }, [product, initialTab, isOpen]);
 
   const handleAddToCart = () => {
     onAddToCart(product, selectedColor, quantity);
@@ -320,7 +332,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                             : 'text-[#786E66] hover:text-[#26211E]'
                         }`}
                       >
-                        Dimensions
+                        Specifications & Dimensions
                       </button>
                       <button
                         onClick={() => setActiveTab('materials')}
@@ -341,31 +353,49 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     )}
 
                     {activeTab === 'dimensions' && (
-                      <div className="grid grid-cols-2 gap-3 text-xs bg-white p-3 rounded-xl border border-[#EAE2D8]">
-                        <div>
-                          <span className="text-[#A09890]">Width:</span>{' '}
-                          <strong className="text-[#26211E]">{product.dimensions.width}</strong>
-                        </div>
-                        <div>
-                          <span className="text-[#A09890]">Depth:</span>{' '}
-                          <strong className="text-[#26211E]">{product.dimensions.depth}</strong>
-                        </div>
-                        <div>
-                          <span className="text-[#A09890]">Height:</span>{' '}
-                          <strong className="text-[#26211E]">{product.dimensions.height}</strong>
-                        </div>
-                        {product.dimensions.seatHeight && (
+                      <div className="space-y-3">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs bg-white p-3 rounded-xl border border-[#EAE2D8]">
                           <div>
-                            <span className="text-[#A09890]">Seat Height:</span>{' '}
-                            <strong className="text-[#26211E]">{product.dimensions.seatHeight}</strong>
+                            <span className="text-[#A09890] block text-[11px]">Width</span>
+                            <strong className="text-[#26211E] text-sm">{product.dimensions.width}</strong>
                           </div>
-                        )}
-                        {product.dimensions.weight && (
                           <div>
-                            <span className="text-[#A09890]">Weight:</span>{' '}
-                            <strong className="text-[#26211E]">{product.dimensions.weight}</strong>
+                            <span className="text-[#A09890] block text-[11px]">Depth</span>
+                            <strong className="text-[#26211E] text-sm">{product.dimensions.depth}</strong>
                           </div>
-                        )}
+                          <div>
+                            <span className="text-[#A09890] block text-[11px]">Total Height</span>
+                            <strong className="text-[#26211E] text-sm">{product.dimensions.height}</strong>
+                          </div>
+                          {product.dimensions.seatHeight && (
+                            <div>
+                              <span className="text-[#A09890] block text-[11px]">Seat Height</span>
+                              <strong className="text-[#26211E] text-sm">{product.dimensions.seatHeight}</strong>
+                            </div>
+                          )}
+                          {product.dimensions.weight && (
+                            <div>
+                              <span className="text-[#A09890] block text-[11px]">Net Weight</span>
+                              <strong className="text-[#26211E] text-sm">{product.dimensions.weight}</strong>
+                            </div>
+                          )}
+                          <div>
+                            <span className="text-[#A09890] block text-[11px]">Status</span>
+                            <span className="inline-flex items-center text-xs font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">
+                              {product.stockStatus}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Material composition summary */}
+                        <div className="bg-[#FAF7F2] p-2.5 rounded-lg border border-[#EAE2D8] text-[11px] text-[#5C534C] flex flex-wrap gap-1.5 items-center">
+                          <span className="font-semibold text-[#26211E]">Build:</span>
+                          {product.materials.map((m, idx) => (
+                            <span key={idx} className="bg-white px-2 py-0.5 rounded border border-[#EAE2D8]">
+                              {m}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     )}
 

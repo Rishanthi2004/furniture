@@ -395,7 +395,7 @@ export const CinematicScroller: React.FC<CinematicScrollerProps> = ({
                     className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-xs"
                   >
                     <img
-                      src="/src/assets/images/hero_living_room_1793872982731.jpg"
+                      src="/assets/images/hero_living_room_1793872982731.jpg"
                       alt="Modern living room with cream sofa and orange accent chair"
                       className="w-full h-full object-cover object-center"
                     />

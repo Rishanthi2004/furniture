@@ -22,7 +22,7 @@ export const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
           {/* Full-width living room photograph with slow scaling hover/scroll effect */}
           <div className="absolute inset-0 overflow-hidden">
             <img
-              src="/src/assets/images/hero_living_room_1793872982731.jpg"
+              src="/assets/images/hero_living_room_1793872982731.jpg"
               alt="Living room interior with warm cream sofa and wooden furniture"
               className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-106 filter brightness-95"
             />

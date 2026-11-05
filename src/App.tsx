@@ -27,6 +27,7 @@ export default function App() {
 
   // Modals & Drawers State
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [detailModalTab, setDetailModalTab] = useState<'overview' | 'dimensions' | 'materials' | 'room'>('overview');
   const [isDetailOpen, setIsDetailOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
@@ -144,15 +145,24 @@ export default function App() {
   };
 
   // Product Selection / Modal Handlers
-  const handleSelectProduct = (product: Product) => {
+  const handleSelectProduct = (product: Product, tab: 'overview' | 'dimensions' | 'materials' | 'room' = 'overview') => {
     setSelectedProduct(product);
+    setDetailModalTab(tab);
     setIsDetailOpen(true);
   };
 
-  const handleExploreProductById = (productId: string) => {
-    const prod = products.find((p) => p.id === productId);
+  const handleExploreProductById = (productId: string, tab: 'overview' | 'dimensions' | 'materials' | 'room' = 'dimensions') => {
+    let prod = products.find((p) => p.id === productId);
+    if (!prod) {
+      if (productId.includes('chair')) {
+        prod = products.find((p) => p.id === 'hero-burnt-chair') || products.find((p) => p.id === 'cozy-armchair');
+      } else {
+        prod = products[0];
+      }
+    }
     if (prod) {
       setSelectedProduct(prod);
+      setDetailModalTab(tab);
       setIsDetailOpen(true);
     }
   };
@@ -311,6 +321,7 @@ export default function App() {
       <ProductDetailModal
         product={selectedProduct}
         isOpen={isDetailOpen}
+        initialTab={detailModalTab}
         onClose={() => setIsDetailOpen(false)}
         isWishlisted={selectedProduct ? wishlistIds.has(selectedProduct.id) : false}
         onToggleWishlist={handleToggleWishlist}

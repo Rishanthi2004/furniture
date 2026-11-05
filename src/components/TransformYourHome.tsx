@@ -16,7 +16,7 @@ export const TransformYourHome: React.FC<TransformYourHomeProps> = ({
       id: 'new-arrivals',
       title: 'New Arrivals',
       subtitle: 'Artisanal Rattan & Timber',
-      image: '/src/assets/images/rattan_lounge_1793872986287.jpg',
+      image: '/assets/images/rattan_lounge_1793872986287.jpg',
       targetId: 'rattan-curve-lounge',
       category: 'seating',
       badge: 'Spring 2026'
@@ -25,7 +25,7 @@ export const TransformYourHome: React.FC<TransformYourHomeProps> = ({
       id: 'minimalist-design',
       title: 'Minimalist Design',
       subtitle: 'Sculptural Shelving & Spaces',
-      image: '/src/assets/images/minimalist_shelf_1793872986427.jpg',
+      image: '/assets/images/minimalist_shelf_1793872986427.jpg',
       targetId: 'minimalist-display-shelf',
       category: 'storage',
       badge: 'Editorial'
@@ -34,7 +34,7 @@ export const TransformYourHome: React.FC<TransformYourHomeProps> = ({
       id: 'special-offers',
       title: 'Special Offers',
       subtitle: 'Curated Terracotta Accents',
-      image: '/src/assets/images/orange_ottoman_1793872986083.jpg',
+      image: '/assets/images/orange_ottoman_1793872986083.jpg',
       targetId: 'velvet-round-ottoman',
       category: 'seating',
       badge: 'Up to 25% Off'

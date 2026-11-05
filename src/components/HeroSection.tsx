@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, SlidersHorizontal } from 'lucide-react';
 
 interface HeroSectionProps {
   onShopNow: () => void;
@@ -56,21 +56,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.95, ease: 'easeOut' }}
-              className="flex items-center gap-4"
+              className="flex flex-wrap items-center gap-3 sm:gap-4"
             >
               <button
+                type="button"
                 onClick={onShopNow}
-                className="group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#C86428] hover:bg-[#B2531D] text-white font-medium text-sm sm:text-base rounded-xl shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
+                className="group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#C86428] hover:bg-[#B2531D] text-white font-medium text-sm sm:text-base rounded-xl shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
                 <span>Shop Now</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
               <button
+                type="button"
                 onClick={() => onExploreProduct('hero-burnt-chair')}
-                className="text-xs uppercase tracking-wider font-semibold text-[#786E66] hover:text-[#C86428] py-2 px-3 transition-colors"
+                className="group inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-[#D5CBC0] hover:border-[#C86428] bg-white/80 hover:bg-white text-xs uppercase tracking-wider font-semibold text-[#4A433E] hover:text-[#C86428] shadow-2xs hover:shadow-xs transition-all duration-200 cursor-pointer"
+                title="View Burnt Orange Accent Chair specifications and dimensions"
               >
-                View Chair Spec
+                <SlidersHorizontal className="w-3.5 h-3.5 stroke-[2] text-[#C86428] group-hover:rotate-180 transition-transform duration-300" />
+                <span>View Chair Spec</span>
               </button>
             </motion.div>
           </div>
@@ -87,7 +91,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <div className="absolute inset-0 bg-gradient-to-tr from-[#FAF7F2] via-transparent to-amber-50/40 pointer-events-none" />
 
               {/* Main Living Room Scene Composition */}
-              <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center">
+              <div
+                className="relative w-full aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center cursor-pointer group"
+                onClick={() => onExploreProduct('hero-burnt-chair')}
+                title="Click to view Burnt Orange Accent Chair specifications"
+              >
                 {/* 1. Base Sofa & Living Room Scene - subtle fade and scale animation */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.94 }}
@@ -100,15 +108,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   className="w-full h-full relative rounded-2xl overflow-hidden shadow-xs"
                 >
                   <img
-                    src="/src/assets/images/hero_living_room_1793872982731.jpg"
+                    src="/assets/images/hero_living_room_1793872982731.jpg"
                     alt="Stunning modern living room with cream sofa, round oak coffee table, and burnt orange accent chair"
-                    className="w-full h-full object-cover object-center filter saturate-[1.03] contrast-[1.01]"
+                    className="w-full h-full object-cover object-center filter saturate-[1.03] contrast-[1.01] group-hover:scale-[1.012] transition-transform duration-500"
                     loading="eager"
                   />
                   {/* Subtle sunlight ray overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-amber-100/20 mix-blend-soft-light pointer-events-none" />
                 </motion.div>
-
               </div>
             </motion.div>
           </div>
