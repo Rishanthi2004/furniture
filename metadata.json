@@ -1,0 +1,6 @@
+{
+  "name": "AURA Furniture — Modern Luxury Showroom",
+  "description": "Premium modern furniture showroom with warm minimalist aesthetics, curated collections, interactive product studio, and bespoke interior design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
